@@ -1,9 +1,16 @@
 import React from 'react';
+import Header from '../components/common/Header';
+import LineBanner from '../components/mainpage/LineBanner';
+import RollingBanner from '../components/mainpage/RollingBanner';
+import Videos from '../components/mainpage/Videos';
 
 const MainPage = () => {
     return (
         <div>
-            메인페이지 입니다.
+            <Header />
+            <RollingBanner />
+            <LineBanner />
+            <Videos />
         </div>
     );
 };
