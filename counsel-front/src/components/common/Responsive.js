@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ResponsiveBlock = styled.div`
-    padding-left: 16.66%;
-    padding-right: 16.66%;
+    padding: 0 16.66%;
 
     /* media settings */
 

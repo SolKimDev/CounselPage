@@ -6,7 +6,6 @@ import ListedVideo from './ListedVideo';
 import SVG from 'react-inlinesvg';
 import rightIcon from '../../rsrc/icons/chevron-right-small.svg';
 
-
 const TitleBlock = styled.div`
     display: flex;
     width: 100%;
@@ -75,36 +74,38 @@ const Wrapper = styled.div`
     display: flex;
 `;
 
-  const StyledSVG = styled(SVG)`
-    width: 1.5rem;
-    height: 1.5rem;
-  `;
+const StyledSVG = styled(SVG)`
+width: 1.5rem;
+height: 1.5rem;
+`;
 
 const Videos = () => {
     return (
         <Responsive>
-            <TitleBlock>
-                <h1>상호명 TV</h1>
-                <ShowMoreBtn>
-                    더보기
-                    <StyledSVG src={rightIcon} />
-                </ShowMoreBtn>
-            </TitleBlock>
-            <Wrapper>
-                <MainVideoBlock />
-                <VideoListBlock>
-                    <ListedVideo title="이곳은 유튜브 영상 제목이 들어가는 영역입니다."></ListedVideo>
-                    <ListedVideo title="영상 제목 1"></ListedVideo>
-                    <ListedVideo title="영상 제목 2"></ListedVideo>
-                    <ListedVideo title="영상 제목 3"></ListedVideo>
-                    <ListedVideo title="영상 제목 4"></ListedVideo>
-                    <ListedVideo title="영상 제목 5"></ListedVideo>
-                    <ListedVideo title="영상 제목 6"></ListedVideo>
-                    <ListedVideo title="영상 제목 7"></ListedVideo>
-                    <ListedVideo title="영상 제목 8"></ListedVideo>
-                    <ListedVideo title="영상 제목 9"></ListedVideo>
-                </VideoListBlock>
-            </Wrapper>
+            <article>
+                <TitleBlock>
+                    <h1>상호명 TV</h1>
+                    <ShowMoreBtn>
+                        더보기
+                        <StyledSVG src={rightIcon} />
+                    </ShowMoreBtn>
+                </TitleBlock>
+                <Wrapper>
+                    <MainVideoBlock />
+                    <VideoListBlock>
+                        <ListedVideo title="이곳은 유튜브 영상 제목이 들어가는 영역입니다."></ListedVideo>
+                        <ListedVideo title="영상 제목 1"></ListedVideo>
+                        <ListedVideo title="영상 제목 2"></ListedVideo>
+                        <ListedVideo title="영상 제목 3"></ListedVideo>
+                        <ListedVideo title="영상 제목 4"></ListedVideo>
+                        <ListedVideo title="영상 제목 5"></ListedVideo>
+                        <ListedVideo title="영상 제목 6"></ListedVideo>
+                        <ListedVideo title="영상 제목 7"></ListedVideo>
+                        <ListedVideo title="영상 제목 8"></ListedVideo>
+                        <ListedVideo title="영상 제목 9"></ListedVideo>
+                    </VideoListBlock>
+                </Wrapper>
+            </article>
         </Responsive>
     );
 };
