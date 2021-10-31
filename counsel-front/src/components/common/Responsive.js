@@ -8,7 +8,9 @@ const ResponsiveBlock = styled.div`
     /* media settings */
 
     /* tablet page */
-    @media ( max-width: 768px ) {
+    /* tablet resolution 768*1024 */
+    /* but web layout crunches at width 1024 */
+    @media ( max-width: 1024px ) {
         width: 768px;
     }
 

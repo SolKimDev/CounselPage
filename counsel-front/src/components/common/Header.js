@@ -3,8 +3,9 @@ import styled from 'styled-components';
 import Responsive from './Responsive';
 import { Link } from 'react-router-dom';
 import palette from '../../lib/styles/palette';
+import MenuItem from './MenuItem';
 
-const FullHeaderBlock = styled.div`
+const FullHeaderBlock = styled.header`
     position: fixed;
     width: 100%;
     background: white;
@@ -41,19 +42,10 @@ const Logo = styled.div`
 
 const MenuBlock = styled.nav`
     width: 41.25rem;
-    display: flex;
-    justify-content: space-around;
-`;
-
-const MenuItem = styled.div`
-    color: ${palette.Font[1]};
     height: 5rem;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-
-    &:hover {
-        color: ${palette.Font[0]};
+    ul {
+        display: flex;
+        justify-content: space-around;
     }
 `;
 
@@ -66,11 +58,13 @@ const Header = () => {
                         <Logo></Logo>
                     </Link>
                     <MenuBlock>
-                        <MenuItem>센터 안내</MenuItem>
-                        <MenuItem>게시판</MenuItem>
-                        <MenuItem>자가진단</MenuItem>
-                        <MenuItem>상담 안내</MenuItem>
-                        <MenuItem>상담 신청</MenuItem>
+                        <ul>
+                            <MenuItem>센터 안내</MenuItem>
+                            <MenuItem>게시판</MenuItem>
+                            <MenuItem>자가진단</MenuItem>
+                            <MenuItem>상담 안내</MenuItem>
+                            <MenuItem>상담 신청</MenuItem>
+                        </ul>
                     </MenuBlock>
                 </Wrapper>
             </FullHeaderBlock>

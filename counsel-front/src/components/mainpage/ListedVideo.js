@@ -14,14 +14,15 @@ const Wrapper = styled.div`
     margin-bottom: 0.625rem;
 
     &:hover {
-        color: ${palette.Font[1]};
+        text-shadow: 0 0 ${palette.Font[2]}; //trasparent-transitioned scrollbar때문에 color 대신 text-shadow로 처리
+        //color: ${palette.Font[1]}; 
     }
     cursor: pointer;
 `;
 
 const TextWrapper = styled.div`
     width: 11.688rem;
-    margin-left: 0.938rem;
+    margin-left: 0.625rem;
 `;
 
 const ListedVideo = ({title}) => {
