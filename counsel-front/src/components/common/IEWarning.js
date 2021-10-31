@@ -22,7 +22,7 @@ const LeftElementBlock = styled.div`
     align-items: center;
 `;
 
-const CloseButtonBlock = styled.div`
+const CloseButtonBlock = styled.button`
     border: none;
     width: 100px;
     height: 36px;
@@ -41,7 +41,6 @@ const CloseButtonBlock = styled.div`
 `;
 
 const ButtonContentsWrapper = styled.div`
-    margin-top: 5px;
     margin-left: 16px;
     display: flex;
     align-items: center;
@@ -67,17 +66,15 @@ const IEWarning = () => {
     const [isVisible, setIsVisible] = useState(true);
     const closeBanner = () => {
         setIsVisible(false);
-        console.log('cb() called!');
     }
-
   return (
       <>
         <WarningBlock isVisible={ isVisible }>
             <LeftElementBlock>
                 <img src={ WarningIcon } style={ StyleWarningIcon } alt="warningIcon"/>이 페이지는 Internet Explorer 이용을 권장하지 않습니다. IE 이외의 브라우저를 이용해 주세요.
             </LeftElementBlock>
-            <CloseButtonBlock>
-                <ButtonContentsWrapper onClick={ closeBanner }>
+            <CloseButtonBlock onClick={ closeBanner }>
+                <ButtonContentsWrapper>
                     <img src={ CloseIcon } style={ StyleCloseIcon } className="closeIcon" alt="closeIcon"/>닫기
                 </ButtonContentsWrapper>
             </CloseButtonBlock>

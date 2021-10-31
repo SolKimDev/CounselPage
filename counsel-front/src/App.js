@@ -7,7 +7,6 @@ const App = () => {
   const [isIE, setIsIE] = useState(false);
 
   const checkIE = () => {
-    //console.log('CIE Called!');
     const agent = navigator.userAgent.toLowerCase();
     if (
       (navigator.appName === 'Netscape' &&
@@ -15,9 +14,7 @@ const App = () => {
       agent.indexOf('msie') !== -1
     ) {
       setIsIE(true);
-      return true;
     }
-    return false;
   }
 
   useEffect(() => {
