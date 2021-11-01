@@ -19,6 +19,11 @@ const ResponsiveBlock = styled.div`
     }
 `;
 
+export const AlignCenter = styled.div`
+    display: flex;
+    justify-content: center;
+`;
+
 const Responsive = ({ children, ...rest}) => {
     return (
         <ResponsiveBlock {...rest}>{children}</ResponsiveBlock>

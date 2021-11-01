@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
-import Responsive from '../common/Responsive';
+import Responsive, { AlignCenter } from '../common/Responsive';
 import ListedVideo from './ListedVideo';
 import SVG from 'react-inlinesvg';
 import rightIcon from '../../rsrc/icons/chevron-right-small.svg';
@@ -68,21 +68,24 @@ const ShowMoreBtn = styled.div`
     cursor: pointer;
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled(AlignCenter)`
     margin-top: 0.938rem;
     margin-bottom: 6.250rem;
-    display: flex;
 `;
 
 const StyledSVG = styled(SVG)`
-width: 1.5rem;
-height: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+`;
+
+const ContentWrap = styled.article`
+    margin-bottom: 6.25rem;
 `;
 
 const Videos = () => {
     return (
         <Responsive>
-            <article>
+            <ContentWrap>
                 <TitleBlock>
                     <h1>상호명 TV</h1>
                     <ShowMoreBtn>
@@ -105,7 +108,7 @@ const Videos = () => {
                         <ListedVideo title="영상 제목 9"></ListedVideo>
                     </VideoListBlock>
                 </Wrapper>
-            </article>
+            </ContentWrap>
         </Responsive>
     );
 };
