@@ -6,6 +6,7 @@ import Process from '../components/mainpage/Process';
 import ReviewBanner from '../components/mainpage/ReviewBanner';
 import RollingBanner from '../components/mainpage/RollingBanner';
 import Videos from '../components/mainpage/Videos';
+import Map from '../components/mainpage/Map';
 
 const MainPage = () => {
     return (
@@ -17,6 +18,7 @@ const MainPage = () => {
             <Process />
             <NoticeBoard />
             <ReviewBanner />
+            <Map />
         </div>
     );
 };

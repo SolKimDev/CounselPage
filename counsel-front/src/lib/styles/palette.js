@@ -18,7 +18,8 @@ const palette = {
     // 브랜드색상 일반 - 마우스오버. 현재 브랜드색상 및 알람색상은 임시값임.
     Brand_Main: [
         '#6524FF',
-        '#D897FF'
+        '#D897FF',
+        '#A444A4'
     ],
     Brand_Sub : [
         '#3A7BD8',
