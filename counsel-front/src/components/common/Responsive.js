@@ -6,6 +6,11 @@ const ResponsiveBlock = styled.div`
 
     /* media settings */
 
+    /* PC, but kill padding */
+    @media ( max-width: 1440px ) {
+        padding: 0 5%;
+    }
+
     /* tablet page */
     /* tablet resolution 768*1024 */
     /* but web layout crunches at width 1024 */
@@ -14,8 +19,8 @@ const ResponsiveBlock = styled.div`
     }
 
     /* mobile page */
-    @media ( max-width: 576px ) {
-        width: 576px;
+    @media ( max-width: 640px ) {
+        width: 640px;
     }
 `;
 

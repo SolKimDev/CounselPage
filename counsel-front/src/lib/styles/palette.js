@@ -24,7 +24,14 @@ const palette = {
         '#3A7BD8',
         '#8DB7F3'
     ],
-    Alert : '#FF3120'
+    Alert : '#FF3120',
+    Notice : [ //공지(dark/hover), 이벤트(dark/hover), 준비중 
+        '#3A7BD8',
+        '#5D92E1',
+        '#48EB35',
+        '#6AF05C',
+        '#999999'
+    ]
 }
 
 export default palette;
