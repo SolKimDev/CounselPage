@@ -18,7 +18,6 @@ const MapDummy = styled.div`
 
 const InfoBlock = styled.div`
     width: 33.6%;
-    min-width: 26.875rem;
     height: 100%;
     background-color: ${palette.Brand_Main[2]};
     position: relative;
@@ -29,6 +28,7 @@ const TextBlock = styled.div`
     margin-bottom: 1.25rem;
     color: white;
     font-weight: 300;
+    font-size: 0.833em;
 
     position: absolute;
     bottom: 0px;

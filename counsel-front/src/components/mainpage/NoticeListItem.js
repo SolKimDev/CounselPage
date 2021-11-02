@@ -40,7 +40,7 @@ const Title = styled.div`
     white-space: nowrap;
 
     ${(props) =>
-        props.content && 
+        props.isValid && 
         css`
             color: ${palette.Font[0]};
             cursor: pointer;
@@ -76,14 +76,14 @@ const NoticeListItem = (props) => {
                 return (
                     <ItemBlock>
                         <NoticeType notice>{ type }</NoticeType>
-                        <Title content>{ text }</Title>
+                        <Title isValid>{ text }</Title>
                     </ItemBlock>
                 );
             case 'event':
                 return (
                     <ItemBlock>
                         <NoticeType event>{ type }</NoticeType>
-                        <Title content>{ text }</Title>
+                        <Title isValid>{ text }</Title>
                     </ItemBlock>
                 )
             default:
