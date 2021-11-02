@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import IEWarning from './components/common/IEWarning';
+import Header from './components/common/Header';
+import Footer from './components/common/Footer';
 import MainPage from './pages/MainPage';
 
 const App = () => {
@@ -24,7 +26,9 @@ const App = () => {
   return (
     <>
       {isIE ? <IEWarning/> : ''}
+      <Header />
       <Route component={MainPage} path="/" exact />
+      <Footer />
     </>
   );
 };

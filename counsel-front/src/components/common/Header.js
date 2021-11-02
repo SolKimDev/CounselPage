@@ -7,6 +7,7 @@ import MenuItem from './MenuItem';
 
 const FullHeaderBlock = styled.header`
     position: fixed;
+    z-index: 5;
     width: 100%;
     background: white;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
