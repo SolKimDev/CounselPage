@@ -6,10 +6,12 @@ import ReviewBanner from '../components/mainpage/ReviewBanner';
 import RollingBanner from '../components/mainpage/RollingBanner';
 import Videos from '../components/mainpage/Videos';
 import Map from '../components/mainpage/Map';
+import Sidebar from '../components/mainpage/Sidebar';
 
 const MainPage = () => {
     return (
-        <div>
+        <main>
+            <Sidebar />
             <RollingBanner />
             <LineBanner />
             <Videos />
@@ -17,7 +19,7 @@ const MainPage = () => {
             <NoticeBoard />
             <ReviewBanner />
             <Map />
-        </div>
+        </main>
     );
 };
 

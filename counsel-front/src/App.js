@@ -27,7 +27,7 @@ const App = () => {
     <>
       {isIE ? <IEWarning/> : ''}
       <Header />
-      <Route component={MainPage} path="/" exact />
+      <Route component={MainPage} path="/" exact/>
       <Footer />
     </>
   );

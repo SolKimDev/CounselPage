@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import palette from '../../lib/styles/palette';
 
 const ButtonBlock = styled.button`
     border: 1px solid white;
@@ -17,12 +18,26 @@ const ButtonBlock = styled.button`
         background-color: white;
         font-weight: 600;
     }
+
+    ${(props) => 
+        props.blue &&
+        css`
+        color: ${palette.Font[1]};
+        font-weight: 600;
+        border: 1px solid ${palette.Font[0]};
+
+        &:hover {
+            border 1px solid ${palette.Font[0]};
+            background: ${palette.Font[0]};
+            color: white;
+        }
+    `}
 `;
 
-const LineButton = ({ children }) => {
+const LineButton = (props) => {
     return (
-        <ButtonBlock>
-            {children}
+        <ButtonBlock blue={props.blue ? 1 : 0}>
+            {props.children}
         </ButtonBlock>
     );
 };

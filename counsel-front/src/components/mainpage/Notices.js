@@ -24,6 +24,10 @@ const StyledSVG = styled(SVG)`
 
     cursor: pointer;
 
+    .st0 {
+        stroke: none;
+    }
+
     &:hover .st0{
         fill: ${palette.Line[0]};
     }
