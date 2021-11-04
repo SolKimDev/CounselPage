@@ -5,7 +5,7 @@ import PhoneIcon from '../../rsrc/icons/NavIcon/Phone_InForm.svg';
 import CloseIcon from '../../rsrc/icons/NavIcon/CloseIcon.svg';
 import palette from '../../lib/styles/palette';
 import LineButton from './LineButton';
-import PrivacyPolicy from '../../rsrc/PrivacyPolicy.js';
+import PrivacyPolicy from '../../pages/Popups/PrivacyPolicy';
 
 const ApplicationBlock = styled.div`
     display: flex;
@@ -118,8 +118,7 @@ const ApplicationForm = ({ closeApplication }) => {
     for(let i=0; i<51; i=i+10) (i<10) ? minute.push('0' + String(i)+'분') : minute.push(String(i)+'분')
 
     const openPopup = () => {
-        //, toolbar=no, resizable=no
-        window.open(PrivacyPolicy, '개인정보처리방침', 'width=768, height=1024, scrollbars=yes');
+        window.open('/popups/policy', '개인정보처리방침', 'width=500, height=650, scrollbars=yes, toolbar=no, resizable=no');
         return false;
     }
 
