@@ -5,7 +5,6 @@ import PhoneIcon from '../../rsrc/icons/NavIcon/Phone_InForm.svg';
 import CloseIcon from '../../rsrc/icons/NavIcon/CloseIcon.svg';
 import palette from '../../lib/styles/palette';
 import LineButton from './LineButton';
-import PrivacyPolicy from '../../pages/Popups/PrivacyPolicy';
 
 const ApplicationBlock = styled.div`
     display: flex;
@@ -98,10 +97,12 @@ const TextBlock = styled.div`
         margin-right: 0.625rem;
     }
 
-    a {
+    span {
         font-weight: bold;
         color: #1273F2;
         text-decoration: none;
+
+        cursor: pointer;
     }
 `;
 
@@ -167,7 +168,7 @@ const ApplicationForm = ({ closeApplication }) => {
                         <BottomWrapper>
                             <LineButton blue>전화상담신청</LineButton>
                             <TextBlock>
-                                <input type="checkbox" id="policy" required /><a href="#" onClick={openPopup}>개인정보처리방침</a>을 확인했으며, 이에 동의합니다.
+                                <input type="checkbox" id="policy" required /><span onClick={openPopup}>개인정보처리방침</span>을 확인했으며, 이에 동의합니다.
                             </TextBlock>
                         </BottomWrapper>
                 </FormBlock>
