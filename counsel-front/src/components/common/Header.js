@@ -16,6 +16,7 @@ const HeaderBlock = styled.header`
 const Wrapper = styled(Responsive)`
     display: flex;
     justify-content: space-between;
+    padding-right: max(1rem, 16.66%);
 `;
 
 const Spacer = styled.div`

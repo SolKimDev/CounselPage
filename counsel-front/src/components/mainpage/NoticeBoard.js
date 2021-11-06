@@ -8,7 +8,7 @@ const BoardBlock = styled(Responsive)`
     margin-bottom: 8.75rem;
     display: flex;
     justify-content: space-between;
-
+    
     div:first-child {
         margin-right:3.125%;
     }

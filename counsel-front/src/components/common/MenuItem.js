@@ -13,7 +13,7 @@ const NavMenuBlock = styled.li`
         color: ${palette.Font[0]};
     }
 
-    &:hover > ul > li {
+    &:hover > ul * {
         visibility: visible;
         height: 3.75rem;
         color: white;
@@ -49,6 +49,8 @@ const SubWrapper = styled.ul`
     position: absolute;
     display: flex;
     flex-direction: column;
+
+    visibility: hidden;
 
     /**********************TABLET RESOLUTIONS*******************/
     @media ( max-width: 1024px ) {
