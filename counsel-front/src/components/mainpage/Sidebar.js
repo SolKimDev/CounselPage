@@ -7,7 +7,7 @@ import SVG from 'react-inlinesvg';
 import LeftIcon from '../../rsrc/icons/chevron-left-small.svg';
 
 const SidebarBlock = styled.div`
-
+    width: 100%;
 `;
 
 
@@ -39,58 +39,68 @@ const NavBlock = styled.aside`
     //background: white;
     z-index: 20;
 
-    top: 8.125em;
-    right: 6.875rem;
+    @media ( min-width:1440px ){
+        top: 8.125em;
+        right: 6.875rem;
+    }
 
-    @media ( max-width: 1440px ) {
+    @media only screen and (min-width: 1025px) and (max-width: 1440px) {
         top: 8rem;
         right: -6rem;
 
         &:hover {
-            right: -1rem;
+            right: 0.5rem;
         }
     }
 
     transition: right .5s;
 
-    //모든 창이 떠 있을 때
+    //모든 창이 떠 있을 때 기준
     ${(props) => 
         props.isVisible && 
         css`
-        right: 41.875rem; // 41.25 + 0.625 = ApplicationBlockWidth + NavRightMargin
+        @media ( min-width:1440px ){
+            right: 41.875rem; // 41.25 + 0.625 = ApplicationBlockWidth + NavRightMargin
 
-        margin-right: 1.25rem;
+            margin-right: 1.25rem;
+        }
     `}
-    
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        width: 100%;
+        height: 5.625rem;
+        bottom:0;
+    }
 `;
 
 const ShowHiddenNavbar = styled(SVG)`
     display: none;
 
-    @media ( max-width: 1440px) {
-    display: block;
-    position: fixed;
-    width: 5rem;
-    height: 5rem;
+    @media only screen and (min-width: 1025px) and (max-width: 1440px)  {
+        display: block;
+        position: fixed;
+        width: 5rem;
+        height: 5rem;
 
-    top: 15em;
-    right: 0rem;
+        top: 15em;
+        right: 0rem;
 
-    cursor: pointer;
+        cursor: pointer;
 
-    & path {
-        fill: none;
-        stroke: ${palette.Line[0]};
-        stroke-width: 0.4px;
+        & path {
+            fill: none;
+            stroke: ${palette.Line[0]};
+            stroke-width: 0.4px;
 
-        //shadows
-        -webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .7));
-        filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .7));
-    }
+            //shadows
+            -webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .7));
+            filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .7));
+        }
 
-    &:hover + aside {
-        right: 0.5rem;
-    }
+        &:hover + aside {
+            right: 0.5rem;
+        }
     }
 `;
 
@@ -124,11 +134,11 @@ const Sidebar = () => {
             <NavBlock isVisible={isVisible}>
                 <NavBar openApplication={openApplication}/>
             </NavBlock>
-                <Overlay isVisible={isVisible}>
-                    <ApplicationBlock isVisible={isVisible}>
-                        <ApplicationForm closeApplication={closeApplication}/>
-                    </ApplicationBlock>
-                </Overlay>
+            <Overlay isVisible={isVisible}>
+                <ApplicationBlock isVisible={isVisible}>
+                    <ApplicationForm closeApplication={closeApplication}/>
+                </ApplicationBlock>
+            </Overlay>
         </SidebarBlock>
     );
 };

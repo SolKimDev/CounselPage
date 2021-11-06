@@ -6,6 +6,11 @@ import Responsive, { AlignCenter } from '../common/Responsive';
 
 const ContentWrap = styled.article`
     margin-bottom: 11.25rem;
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        margin-bottom: 3.125rem;
+    }
 `;
 
 const TitleBlock = styled.div`
@@ -18,15 +23,40 @@ const TitleBlock = styled.div`
         display: block;
         clear: both;
     }
+
+    h1 {
+        float:right;
+    }
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        & h1 {
+            font-size: 1.666em;
+            float:none;
+        }
+    }
 `;
 
 const ImageBlock = styled(AlignCenter)`
     margin-bottom: 3.75rem;
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        margin-bottom: 1.25rem;
+    }
 `;
 
 const TextBlock = styled(AlignCenter)`
     font-size: 1.166em;
     margin-bottom: 2.5rem;
+    text-align: center;
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        padding: 0 17.567%;
+        font-size: 0.833em;
+        margin-bottom: 2.125rem;
+    }
 `;
 
 const ButtonBlock = styled(AlignCenter)``;
@@ -34,7 +64,12 @@ const ButtonBlock = styled(AlignCenter)``;
 const TempImg = styled.div`
     width: 64rem;
     height: 20.875rem;
-    background-color: ${palette.BG[0]}
+    background-color: ${palette.BG[0]};
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        height: 13.563rem;
+    }
 `;
 
 const Process = () => {
@@ -42,7 +77,7 @@ const Process = () => {
         <Responsive>
             <ContentWrap>
                 <TitleBlock>
-                    <h1 style={{float:'right'}}>상담 프로세스</h1>
+                    <h1>상담 프로세스</h1>
                 </TitleBlock>
                 <ImageBlock>
                     <TempImg />

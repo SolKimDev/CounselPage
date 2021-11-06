@@ -9,39 +9,55 @@ const ItemBlock = styled.div`
     background-color: white;
 
     @media ( max-width: 1440px ) {
+        
+    }
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
         height: 4.5rem;
     }
 
     ${(props) =>
         props.item &&
         css`
-            color: red;
             text-align: center; 
 
-            &::after {
-                position:relative;
-                display: block;
-                width: 4.063rem;
-                left: 17.5%;
-                content:"";
-                border-bottom: 1px solid ${palette.Line[1]};
-            }   
+            @media only screen and (min-width: 1025px) {
+                &::after {
+                    position:relative;
+                    display: block;
+                    width: 4.063rem;
+                    left: 17.5%;
+                    content:"";
+                    border-bottom: 1px solid ${palette.Line[1]};
+                }
+            }
+
+            /**********************TABLET RESOLUTIONS*******************/
+            @media ( max-width: 1024px ) {
+                width: 5.625rem;
+            }
     `}
 
     ${(props) =>
         props.phone &&
         css`
-            background-color: #5E5A6A;
-            border-top-left-radius: 30px;
-            border-top-right-radius: 30px;
-            font-family: Roboto;
-            font-weight: 400;
+            display: none;
 
-            color: #DBD9C8;
+            @media ( min-width: 1025px ) {
+                display: block;
+                background-color: #5E5A6A;
+                border-top-left-radius: 30px;
+                border-top-right-radius: 30px;
+                font-family: Roboto;
+                font-weight: 400;
 
-            div {
-                span {
-                    font-size: 0.833em;
+                color: #DBD9C8;
+
+                div {
+                    span {
+                        font-size: 0.833em;
+                    }
                 }
             }
     `}
@@ -51,7 +67,6 @@ const ItemBlock = styled.div`
         css`
             border-bottom-left-radius: 30px;
             border-bottom-right-radius: 30px;
-            color: blue;
     `}
 `;
 
@@ -61,6 +76,11 @@ const ContentWrap = styled.div`
     height: 100%;
     align-items: center;
     justify-content: center;
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        width: 5.625rem;
+    }
 
     ${(props) =>
         !(props.phone) &&
@@ -94,10 +114,10 @@ const PhoneFlexBlock = styled.div`
             font-size: 0.833em;
         }
 
-        @media ( max-width: 1440px ) {
+        @media only screen and (min-width: 1025px) and (max-width: 1440px)  {
             padding-top: 0.4rem;
             padding-left: 1.2rem;
-            font-size: 0.8em;
+            font-size: 1em;
         }
     }
 `;

@@ -5,7 +5,13 @@ import SVG from 'react-inlinesvg';
 import plusIcon from '../../rsrc/icons/plusbutton-medium.svg';
 
 const Wrapper = styled.div`
-    width: 45%;
+    width: 47.5%;
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        width: 100%; 
+        margin-bottom: 5rem;
+    }
 `;
 
 const TitleBlock = styled.div`
@@ -14,6 +20,14 @@ const TitleBlock = styled.div`
     justify-content: space-between;
     
     margin-bottom: 1.875rem;
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        margin-bottom: 1.25rem;
+        & h1 {
+            font-size: 1.666em;
+        }
+    }
 `;
 
 const StyledSVG = styled(SVG)`
@@ -37,6 +51,11 @@ const EventImageBlock = styled.div`
     background-color: ${palette.BG[0]};
 
     cursor: pointer;
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        height: 34.5rem;
+    }
 `;
 
 const Events = () => {

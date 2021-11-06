@@ -7,7 +7,11 @@ import NoticeIcon from '../common/NoticeIcon';
 import NoticeListItem from './NoticeListItem';
 
 const Wrapper = styled.div`
-    width: 45%;
+    width: 47.5%;
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        width: 100%;
+    }
 `;
 
 const TitleBlock = styled.div`
@@ -16,6 +20,14 @@ const TitleBlock = styled.div`
     justify-content: space-between;
     
     margin-bottom: 1.875rem;
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        margin-bottom: 1.25rem;
+        & h1 {
+            font-size: 1.666em;
+        }
+    }
 `;
 
 const StyledSVG = styled(SVG)`
@@ -89,6 +101,11 @@ const TopNoticePreview = styled.p`
 
 const HrWithMarginBottom = styled.hr`
     margin-bottom: 1.875rem;
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        margin-bottom: 1.25rem;
+    }
 `;
 
 const NoticeListBlock = styled.div`

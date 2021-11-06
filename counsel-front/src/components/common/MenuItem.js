@@ -19,6 +19,11 @@ const NavMenuBlock = styled.li`
         color: white;
         transition: all 0.3s;
     }
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        margin-top: 0.813rem;
+    }
 `;
 
 const DropdownMenu = styled.li`
@@ -32,8 +37,6 @@ const DropdownMenu = styled.li`
 
     position: relative;
     top: 1.5rem;
-    height: 0; //for transition
-    //height: 3.75rem;
     width: 15.6rem;
 
     &:hover {
@@ -46,6 +49,13 @@ const SubWrapper = styled.ul`
     position: absolute;
     display: flex;
     flex-direction: column;
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        & * {
+            display: none;
+        }
+    }
 `;
 
 const TextWrapper = styled.div`

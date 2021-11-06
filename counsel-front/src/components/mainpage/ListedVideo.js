@@ -18,11 +18,28 @@ const Wrapper = styled.div`
         //color: ${palette.Font[1]}; 
     }
     cursor: pointer;
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        display: block;
+        margin-bottom: 0;
+        margin-right: 0.625rem;
+    }
 `;
 
 const TextWrapper = styled.div`
     width: 11.688rem;
     margin-left: 0.625rem;
+
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        width: 15.5rem;
+        
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 `;
 
 const ListedVideo = ({title}) => {

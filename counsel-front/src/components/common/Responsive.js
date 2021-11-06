@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const ResponsiveBlock = styled.div`
     padding: 0 16.66%;
+    box-sizing: border-box;
 
     /* media settings */
 
@@ -13,14 +14,14 @@ const ResponsiveBlock = styled.div`
 
     /* tablet page */
     /* tablet resolution 768*1024 */
-    /* but web layout crunches at width 1024 */
+    /* but web layout crunches at width 1024 x nnn */
     @media ( max-width: 1024px ) {
-        width: 768px;
+        padding: 0 6.64%
     }
 
     /* mobile page */
     @media ( max-width: 640px ) {
-        width: 640px;
+        
     }
 `;
 

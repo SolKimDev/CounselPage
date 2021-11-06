@@ -167,7 +167,7 @@ const ApplicationForm = ({ closeApplication }) => {
                         <BottomWrapper>
                             <LineButton blue>전화상담신청</LineButton>
                             <TextBlock>
-                                <input type="checkbox" id="policy" required /><a href="javascript:void(0);" onClick={openPopup}>개인정보처리방침</a>을 확인했으며, 이에 동의합니다.
+                                <input type="checkbox" id="policy" required /><a href="#" onClick={openPopup}>개인정보처리방침</a>을 확인했으며, 이에 동의합니다.
                             </TextBlock>
                         </BottomWrapper>
                 </FormBlock>

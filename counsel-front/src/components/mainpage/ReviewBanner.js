@@ -12,6 +12,11 @@ const BannerBlock = styled.div`
     height: 32rem;
 
     margin-bottom: 10.625rem;
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        margin-bottom: 6.25rem;
+    }
 `;
 
 const Cover = styled.div`
@@ -49,6 +54,7 @@ const StyledSVG = styled(SVG)`
     &:hover path {
         stroke-width: 0.8px;
     }
+
 `;
 
 const SampleReview = {

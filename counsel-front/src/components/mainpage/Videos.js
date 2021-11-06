@@ -11,6 +11,13 @@ const TitleBlock = styled.div`
     width: 100%;
     align-items: flex-end;
     justify-content: space-between;
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        & h1 {
+            font-size: 1.666em;
+        }
+    }
 `;
 
 const MainVideoBlock = styled.div`
@@ -19,6 +26,13 @@ const MainVideoBlock = styled.div`
     background: ${palette.BG[0]};
 
     margin-right: 0.938rem;
+
+    @media ( max-width: 1024px ) {
+        margin-right: 0;
+        margin-bottom: 1.313rem;
+        width: 100%;
+        height: 24.688em;
+    }
 `;
 
 const VideoListBlock = styled.div`
@@ -46,6 +60,13 @@ const VideoListBlock = styled.div`
     &:hover {
         color: rgba(0, 0, 0, 0.3);
     }
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        display: flex;
+        width: 100%;
+        height: fit-content;
+    }
 `;
 
 const ShowMoreBtn = styled.div`
@@ -71,6 +92,12 @@ const ShowMoreBtn = styled.div`
 const Wrapper = styled(AlignCenter)`
     margin-top: 0.938rem;
     margin-bottom: 6.250rem;
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        display: block;
+        margin-top: 1.25rem;
+    }
 `;
 
 const StyledSVG = styled(SVG)`
@@ -80,6 +107,11 @@ const StyledSVG = styled(SVG)`
 
 const ContentWrap = styled.article`
     margin-bottom: 6.25rem;
+
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        margin-bottom: 3.125rem;
+    }
 `;
 
 const Videos = () => {

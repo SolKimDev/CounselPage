@@ -9,16 +9,22 @@ import Diagnose from '../../rsrc/icons/NavIcon/Diagnose.svg';
 import Call from '../../rsrc/icons/NavIcon/Phone.svg';
 
 const NavBarBlock = styled.nav`
-
     width: 100%;
     height: 100%;
     //background-color: white;
     border-radius: 30px;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.25);
 
-    @media ( max-width: 1440px ) {
-        height: 80%;
-        width: 80%;
+    /**********************TABLET RESOLUTIONS*******************/
+    @media ( max-width: 1024px ) {
+        padding: 0 3.188rem;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-radius: 0;
+        box-shadow: 0px 0px -15px rgba(0, 0, 0, 0.25);
+        background-color: white;
     }
 `;
 
