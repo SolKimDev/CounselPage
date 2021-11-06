@@ -8,6 +8,10 @@ const ItemBlock = styled.div`
     height: 5.625rem;
     background-color: white;
 
+    @media ( max-width: 1440px ) {
+        height: 4.5rem;
+    }
+
     ${(props) =>
         props.item &&
         css`
@@ -89,6 +93,12 @@ const PhoneFlexBlock = styled.div`
         span {
             font-size: 0.833em;
         }
+
+        @media ( max-width: 1440px ) {
+            padding-top: 0.4rem;
+            padding-left: 1.2rem;
+            font-size: 0.8em;
+        }
     }
 `;
 
@@ -96,11 +106,20 @@ const ImgStyle = styled.img`
     width: 1.25rem;
     height: 1.25rem;
     padding-top: 0.75rem;
+
+    @media ( max-width: 1440px ) {
+        display: none;
+    }
 `;
 
 const BoxedImg = styled.img`
     width: 3.438rem;
     height: 3.125rem;  
+
+    @media ( max-width: 1440px ) {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 `;
 
 const BoxedText = styled.div`

@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 import NavBar from '../common/NavBar';
 import ApplicationForm from '../common/ApplicationForm';
 import palette from '../../lib/styles/palette';
+import SVG from 'react-inlinesvg';
+import LeftIcon from '../../rsrc/icons/chevron-left-small.svg';
 
 const SidebarBlock = styled.div`
 
@@ -40,6 +42,15 @@ const NavBlock = styled.aside`
     top: 8.125em;
     right: 6.875rem;
 
+    @media ( max-width: 1440px ) {
+        top: 8rem;
+        right: -6rem;
+
+        &:hover {
+            right: -1rem;
+        }
+    }
+
     transition: right .5s;
 
     //모든 창이 떠 있을 때
@@ -51,6 +62,36 @@ const NavBlock = styled.aside`
         margin-right: 1.25rem;
     `}
     
+`;
+
+const ShowHiddenNavbar = styled(SVG)`
+    display: none;
+
+    @media ( max-width: 1440px) {
+    display: block;
+    position: fixed;
+    width: 5rem;
+    height: 5rem;
+
+    top: 15em;
+    right: 0rem;
+
+    cursor: pointer;
+
+    & path {
+        fill: none;
+        stroke: ${palette.Line[0]};
+        stroke-width: 0.4px;
+
+        //shadows
+        -webkit-filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .7));
+        filter: drop-shadow( 1px 1px 2px rgba(0, 0, 0, .7));
+    }
+
+    &:hover + aside {
+        right: 0.5rem;
+    }
+    }
 `;
 
 const ApplicationBlock = styled.div`
@@ -79,6 +120,7 @@ const Sidebar = () => {
 
     return (
         <SidebarBlock>
+            <ShowHiddenNavbar src={LeftIcon} />
             <NavBlock isVisible={isVisible}>
                 <NavBar openApplication={openApplication}/>
             </NavBlock>

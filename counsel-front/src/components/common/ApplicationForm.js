@@ -163,7 +163,7 @@ const ApplicationForm = ({ closeApplication }) => {
 
                             </InputBlock>
                         <CallTimeDescription>희망통화시간은 영업시간 내에서만 선택 가능하며, 임의로 변경될 수 있습니다.</CallTimeDescription>
-                        <InputBlock style={{marginBottom:"5rem"}}><label>문의내용</label><textarea cols="44" rows="16"></textarea></InputBlock>
+                        <InputBlock style={{marginBottom:"5rem"}}><label>문의내용</label><textarea cols="40" rows="10"></textarea></InputBlock>
                         <BottomWrapper>
                             <LineButton blue>전화상담신청</LineButton>
                             <TextBlock>

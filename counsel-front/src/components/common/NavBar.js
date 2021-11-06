@@ -9,11 +9,17 @@ import Diagnose from '../../rsrc/icons/NavIcon/Diagnose.svg';
 import Call from '../../rsrc/icons/NavIcon/Phone.svg';
 
 const NavBarBlock = styled.nav`
+
     width: 100%;
     height: 100%;
     //background-color: white;
     border-radius: 30px;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.25);
+
+    @media ( max-width: 1440px ) {
+        height: 80%;
+        width: 80%;
+    }
 `;
 
 const testItem = [
