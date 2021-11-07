@@ -1,3 +1,4 @@
+import dotenv from "dotenv";
 import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 import Responsive from './Responsive';
@@ -137,16 +138,26 @@ const Header = (props) => {
     }
     
     useEffect(() => {
-        console.log();
+        //릴리즈시 TESTURI => SERVICEURI로 변경
+        const domains = process.env.REACT_APP_TESTURI.split(",");
+        const checkDomain = item => {
+            if (document.referrer === item) {
+                return true;
+            }
+
+            return false;
+        };
+    
         const preventGoBack = () => {
             if(isVisible) {
                 closeSideMenu();
                 history.pushState(null, '', location.href);
             } else {
-                //릴리즈 할 때 도메인 네임에 맞춰 바꾸세요
-                if((document.referrer === "http://localhost:3000/mainpage") || (document.referrer === "")) {
+                if(domains.some(checkDomain)) {
+                    console.log(true);
                     history.go(-2);
                 } else {
+                    console.log(document.referrer);
                     history.go(-1);
                 }
             }
