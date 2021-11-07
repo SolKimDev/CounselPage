@@ -21,7 +21,7 @@ const ResponsiveBlock = styled.div`
 
     /* mobile page */
     @media ( max-width: 640px ) {
-        
+        padding: 0 3.333%;
     }
 `;
 
