@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 
 const SideMenuBlock = styled.aside`
     position: relative;
-    width: 55.2%;
+    width: 55.2vw;
     right: -25rem;
     height: 100%;
     background-color: white;
@@ -17,6 +17,11 @@ const SideMenuBlock = styled.aside`
         `
     )}
 `;
+
+const ContentWrap = styled.div`
+
+`;
+
 const SideMenu = (props) => {
     return (
         <SideMenuBlock isVisible={props.isVisible ? 1 : 0}>

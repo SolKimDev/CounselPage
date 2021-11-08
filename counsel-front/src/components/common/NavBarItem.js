@@ -17,6 +17,12 @@ const ItemBlock = styled.div`
         height: 4.5rem;
     }
 
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        height: 7.389vh;
+        width: 18.4vw;
+    }
+
     ${(props) =>
         props.item &&
         css`
@@ -36,6 +42,12 @@ const ItemBlock = styled.div`
             /**********************TABLET RESOLUTIONS*******************/
             @media ( max-width: 1024px ) {
                 width: 5.625rem;
+            }
+
+            /**********************MOBILE RESOLUTIONS*******************/
+            @media ( max-width: 640px ) {
+                height: 7.389vh;
+                width: 18.4vw;
             }
     `}
 
@@ -82,6 +94,12 @@ const ContentWrap = styled.div`
         width: 5.625rem;
     }
 
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        width: inherit;
+        height: inherit;
+    }
+
     ${(props) =>
         !(props.phone) &&
         css`
@@ -98,6 +116,14 @@ const ContentBox = styled.div`
     display: block;
     text-align: center;
     padding: 0.688rem 0;
+    box-sizing: border-box;
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        padding: 0;
+        width: fit-content;
+        height: 4.864vh;
+    }
 `;
 
 const PhoneFlexBlock = styled.div`
@@ -130,6 +156,12 @@ const ImgStyle = styled.img`
     @media ( max-width: 1440px ) {
         display: none;
     }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        width: 30%;
+        height: 30%;
+    }
 `;
 
 const BoxedImg = styled.img`
@@ -140,14 +172,28 @@ const BoxedImg = styled.img`
         width: 2.5rem;
         height: 2.5rem;
     }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        width: 6.666vw;
+        height: 3.078vh;
+    }
 `;
 
 const BoxedText = styled.div`
     margin-top: -5px;
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        font-size: 1.231vh;
+    }
 `;
 
 const TopBtnBlock = styled.div`
-
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        font-size: 1.5vh;
+    }
 `;
 
 const NavBarItem = ({ phone, item, top, openApplication }) => {
@@ -160,9 +206,9 @@ const NavBarItem = ({ phone, item, top, openApplication }) => {
                 <ContentWrap item={1}> 
                     { openApplication ? (
                         <ContentBox onClick={openApplication}>
-                        <BoxedImg src={item.icon} />
-                        <BoxedText>{item.text}</BoxedText>
-                    </ContentBox>
+                            <BoxedImg src={item.icon} />
+                            <BoxedText>{item.text}</BoxedText>
+                        </ContentBox>
                     ) : (
                         <ContentBox>
                             <BoxedImg src={item.icon} />

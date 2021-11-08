@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import NavBarItem from './NavBarItem';
 
@@ -25,6 +25,11 @@ const NavBarBlock = styled.nav`
         border-radius: 0;
         box-shadow: 0px 0px -15px rgba(0, 0, 0, 0.25);
         background-color: white;
+    }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        padding: 0 4vw;
     }
 `;
 
@@ -61,14 +66,59 @@ const testItem = [
     },
 ]
 
+const mobileItem = [
+    {
+        icon: Call,
+        type: "Call",
+        moveTo: "1234",
+        text: "전화상담"
+    },{
+        icon: Kakao,
+        type: "Kakao",
+        moveTo: "1234",
+        text: "카톡 문의"
+    },
+    {
+        icon: Naver,
+        type: "Naver",
+        moveTo: "1234",
+        text: "네이버 예약"
+    },
+    {
+        icon: Reservation,
+        type: "Reservation",
+        moveTo: "1234",
+        text: "직접 예약"
+    }
+]
+
 const NavBar = ({ openApplication }) => {
+    const [mQuery, setMQuery] = useState(
+        window.innerWidth < 640 ? true : false
+    );
+
+    const screenChange = (event) => {
+        const matches = event.matches;
+        setMQuery(matches);
+    }
+
+    useEffect(() => {
+        let mql = window.matchMedia("screen and (max-width: 640px)");
+        mql.addEventListener("change", screenChange);
+        return () => mql.removeEventListener("change", screenChange)
+    }, [])
+
     return (
         <NavBarBlock>
             <NavBarItem phone/>
-            {
+            {   mQuery ? (
+                mobileItem.map((item, index) => (
+                    <NavBarItem item={item} key={index} openApplication={item.type === "Call" ? openApplication : undefined }/>
+                ))) :
+                (
                 testItem.map((item, index) => (
                     <NavBarItem item={item} key={index} openApplication={item.type === "Call" ? openApplication : undefined }/>
-                ))
+                )))
             }
             <NavBarItem top/>
         </NavBarBlock>

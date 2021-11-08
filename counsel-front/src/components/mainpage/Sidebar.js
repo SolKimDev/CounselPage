@@ -72,6 +72,11 @@ const NavBlock = styled.aside`
         height: 5.625rem;
         bottom:0;
     }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        height: 7.389vh;
+    }
 `;
 
 const ShowHiddenNavbar = styled(SVG)`

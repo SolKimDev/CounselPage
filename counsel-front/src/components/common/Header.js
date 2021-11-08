@@ -111,12 +111,12 @@ const Overlay = styled.div`
 `;
 
 const OverlayClosingArea = styled.div`
-    width: 44.8%;
+    width: 44.8vw;
     height: 100%;
 `;
 
 const OverlayContentWrapper = styled.div`
-    height: 92.611%;
+    height: 92.611vh; // 100 -7.389 (바닥 NavBar 크기 제외)
     display: flex;
 `;
 
