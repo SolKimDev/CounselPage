@@ -7,6 +7,7 @@ import palette from '../../lib/styles/palette';
 import MenuItem from './MenuItem';
 import MenuBtn from '../../rsrc/icons/NavIcon/MenuBtn.svg';
 import SideMenu from './SideMenu';
+import { Dropdown_01, Dropdown_02, Dropdown_04 } from '../../lib/ListedItems';
 
 const HeaderBlock = styled.header`
     position: fixed;
@@ -126,6 +127,14 @@ const QuickMenuSpacer = styled.div`
 
 const Header = (props) => {
     const [isVisible, setIsVisible] = useState(false);
+    const [mQuery, setMQuery] = useState(
+        window.innerWidth > 640 ? true : false
+    );
+
+    const screenChange = (event) => {
+        const matches = event.matches;
+        setMQuery(matches);
+    }
 
     let history = window.history;
     let location = window.location;
@@ -137,6 +146,18 @@ const Header = (props) => {
         setIsVisible(true);
     }
     
+    useEffect(() => {
+        let mql = window.matchMedia("screen and (min-width: 640px)");
+        mql.addEventListener("change", screenChange);
+        return () => mql.removeEventListener("change", screenChange)
+    }, []);
+
+    useEffect(() => {
+        if(mQuery) {
+            closeSideMenu();
+        }
+    },[mQuery]);
+
     useEffect(() => {
         //릴리즈시 TESTURI => SERVICEURI로 변경
         const domains = process.env.REACT_APP_TESTURI.split(",");
@@ -180,10 +201,10 @@ const Header = (props) => {
                     </Link>
                     <MenuBlock>
                         <ul>
-                            <MenuItem>센터 안내</MenuItem>
-                            <MenuItem>게시판</MenuItem>
+                            <MenuItem listItem={Dropdown_01}>센터 안내</MenuItem>
+                            <MenuItem listItem={Dropdown_02}>게시판</MenuItem>
                             <MenuItem>자가진단</MenuItem>
-                            <MenuItem>상담 안내</MenuItem>
+                            <MenuItem listItem={Dropdown_04}>상담 안내</MenuItem>
                             <MenuItem>상담 신청</MenuItem>
                         </ul>
                     </MenuBlock>

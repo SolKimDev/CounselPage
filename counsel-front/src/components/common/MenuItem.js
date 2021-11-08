@@ -8,21 +8,27 @@ const NavMenuBlock = styled.li`
     display: inline-block;
     margin-top: 1.575rem;
     cursor: pointer;
+    height: 3.425rem; //Header Height - margin-top
 
-    &:hover {
+    &:hover > span{
         color: ${palette.Font[0]};
+        font-weight: bold;
     }
 
-    &:hover > ul * {
-        visibility: visible;
-        height: 3.75rem;
-        color: white;
-        transition: all 0.3s;
+    /**********************OVER TABLET RESOLUTIONS*******************/
+    @media ( min-width: 1024px ) {
+        &:hover > ul * {
+            visibility: visible;
+            height: 3.75rem;
+            color: white;
+            transition: all 0.3s;
+        }
     }
 
     /**********************TABLET RESOLUTIONS*******************/
     @media ( max-width: 1024px ) {
         margin-top: 0.813rem;
+        height: 2.312rem; //Header Height - margin-top
     }
 `;
 
@@ -52,28 +58,32 @@ const SubWrapper = styled.ul`
 
     visibility: hidden;
 
-    /**********************TABLET RESOLUTIONS*******************/
-    @media ( max-width: 1024px ) {
+    /**********************TABLET RESOLUTIONS ONLY*******************/
+    @media only screen and (min-width: 641px) and (max-width: 1024px)  {
         & * {
             display: none;
-        }
     }
 `;
 
 const TextWrapper = styled.div`
     margin-top: 0.8rem;
     margin-left: 1.25rem;
+    font-weight: 300;
 `;
 
-const MenuItem = ({ children, listName, listLink }) => {
+
+const MenuItem = (props) => {
+    const { children, listItem } = props;
     return (
         <NavMenuBlock>
             {/* 기능 구현할 때 children Link to 로 감싸세요. */}
-            {children}
+            <span>{children}</span>
             <SubWrapper>
-                <DropdownMenu><TextWrapper>드롭다운 1</TextWrapper></DropdownMenu>
-                <DropdownMenu><TextWrapper>드롭다운 2</TextWrapper></DropdownMenu>
-                <DropdownMenu><TextWrapper>드롭다운 3</TextWrapper></DropdownMenu>
+                { listItem ? (
+                    listItem.map(item => (
+                        <DropdownMenu key={item.to}><TextWrapper>{item.text}</TextWrapper></DropdownMenu>
+                    ))
+                ) : '' }
             </SubWrapper>
         </NavMenuBlock>
     );
