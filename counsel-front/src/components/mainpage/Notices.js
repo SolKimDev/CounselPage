@@ -67,7 +67,7 @@ const TopNoticeBlock = styled.div`
 
     /**********************MOBILE RESOLUTIONS*******************/
     @media ( max-width: 640px ) {
-        margin-bottom: 1.231vh;
+        margin-bottom: 2vh;
     }
 `;
 
@@ -133,7 +133,7 @@ const HrWithMarginBottom = styled.hr`
 
     /**********************MOBILE RESOLUTIONS*******************/
     @media ( max-width: 640px ) {
-        margin-bottom: 1.847vh;
+        margin-bottom: 2vh;
     }
 `;
 

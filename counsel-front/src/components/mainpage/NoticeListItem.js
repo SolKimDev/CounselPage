@@ -6,6 +6,12 @@ const ItemBlock = styled.div`
     width: 100%;
     display: flex;
     margin-bottom: 0.625rem;
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        font-size: 0.9em;
+        margin-bottom: 0.7vh;
+    }
 `;
 
 const NoticeType = styled.div`
@@ -16,6 +22,11 @@ const NoticeType = styled.div`
     margin-right: 0.625rem;
     font-weight: 700;
     color: ${palette.Font[2]};
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        width: 15vw;
+    }
 
     ${(props) =>
         props.notice &&

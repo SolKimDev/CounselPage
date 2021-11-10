@@ -18,17 +18,22 @@ const IconBlock = styled.div`
     
     background-color: ${palette.Notice[0]};
 
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        min-width: 15vw;
+        min-height: 0;
+        width: fit-content;
+        height: 5vh;
+
+        padding: 0 2vw;
+        margin-right: 
+    }
+
     ${(props) =>
         props.event &&
         css`
             background-color: ${palette.Notice[2]};
         `}
-
-    /**********************MOBILE RESOLUTIONS*******************/
-    @media ( max-width: 640px ) {
-        width: 12.266vw;
-        height: 2.832vh;
-    }
 `;
 
 /*
