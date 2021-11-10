@@ -12,6 +12,11 @@ const Wrapper = styled.div`
         width: 100%; 
         margin-bottom: 5rem;
     }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        margin-bottom: 6.157vh;
+    }
 `;
 
 const TitleBlock = styled.div`
@@ -26,6 +31,15 @@ const TitleBlock = styled.div`
         margin-bottom: 1.25rem;
         & h1 {
             font-size: 1.666em;
+        }
+    }
+    
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        margin-bottom: 1.231vh;
+
+        & h1 {
+            font-weight: 500;
         }
     }
 `;
@@ -55,6 +69,11 @@ const EventImageBlock = styled.div`
     /**********************TABLET RESOLUTIONS*******************/
     @media ( max-width: 1024px ) {
         height: 34.5rem;
+    }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        height: 93.333vw;
     }
 `;
 

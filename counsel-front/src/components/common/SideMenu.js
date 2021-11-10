@@ -34,8 +34,8 @@ const SideMenu = (props) => {
             <ul>
                 <MobileMenuItem listItem={Dropdown_01}>센터 안내</MobileMenuItem>
                 <MobileMenuItem listItem={Dropdown_02}>게시판</MobileMenuItem>
-                <MobileMenuItem>자가진단</MobileMenuItem>
                 <MobileMenuItem listItem={Dropdown_04}>상담 안내</MobileMenuItem>
+                <MobileMenuItem>자가진단</MobileMenuItem>
                 <MobileMenuItem>상담 신청</MobileMenuItem>
             </ul>
         </SideMenuBlock>

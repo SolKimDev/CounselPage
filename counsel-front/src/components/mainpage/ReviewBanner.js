@@ -17,12 +17,23 @@ const BannerBlock = styled.div`
     @media ( max-width: 1024px ) {
         margin-bottom: 6.25rem;
     }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        height: 33.497vh;
+        margin-bottom: 8vh;
+    }
 `;
 
 const Cover = styled.div`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 10, 0.8);
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        height: 33.497vh;
+    }
 `;
 
 const ContentWrap = styled(Responsive)`
@@ -30,6 +41,11 @@ const ContentWrap = styled(Responsive)`
     height: 100%;
     align-items: center;
     justify-content: space-between;
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        font-size: 0.8em;
+    }
 `;
 
 const MainContentBlock = styled.div`
@@ -37,6 +53,15 @@ const MainContentBlock = styled.div`
     text-align: center;
 
     margin-bottom: 2.5rem;
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        padding: 2.463vh 0;
+
+        h1, small {
+            display: none;
+        }
+    }
 `;
 
 const StyledSVG = styled(SVG)`
@@ -55,6 +80,10 @@ const StyledSVG = styled(SVG)`
         stroke-width: 0.8px;
     }
 
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        display: none;
+    }
 `;
 
 const SampleReview = {

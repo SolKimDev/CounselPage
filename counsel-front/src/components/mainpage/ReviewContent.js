@@ -13,10 +13,36 @@ const ContentBlock = styled.div`
     &:hover {
         color: ${palette.Font[2]};
     }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        margin-bottom: 3.694vh;
+        font-size: 0.9em;
+    }
 `;
 
-const TitleWithMarginBottom = styled.h2`
+const TitleWithMarginBottom = styled.div`
     margin-bottom: 1.875rem;
+    display: inline-block;
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        padding: 0 5%;
+        box-sizing: border-box;
+        width: 80vw;
+        text-align: center;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        margin-bottom: 3.694vh;
+
+        h2 {
+            display: inline;
+            text-align: center;
+        }
+    }
 `;
 
 const PreviewWithLimitedWidth = styled.p`
@@ -30,12 +56,17 @@ const PreviewWithLimitedWidth = styled.p`
     word-wrap: break-word;
     line-height: 1.5em;
     height: 3em;
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        margin 0 3%;
+    }
 `;
 
 const ReviewContent = ({ item }) => {
     return (
         <ContentBlock>
-            <TitleWithMarginBottom>{ item.title }</TitleWithMarginBottom>
+            <TitleWithMarginBottom><h2>{ item.title }</h2></TitleWithMarginBottom>
             <PreviewWithLimitedWidth>{ item.preview }</PreviewWithLimitedWidth>
         </ContentBlock>
     );

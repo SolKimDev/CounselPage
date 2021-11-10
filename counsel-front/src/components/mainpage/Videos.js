@@ -18,6 +18,15 @@ const TitleBlock = styled.div`
             font-size: 1.666em;
         }
     }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        margin-bottom: 1.231vh;
+        
+        & h1 {
+            font-weight: 500;
+        }
+    }
 `;
 
 const MainVideoBlock = styled.div`
@@ -32,6 +41,12 @@ const MainVideoBlock = styled.div`
         margin-bottom: 1.313rem;
         width: 100%;
         height: 24.688em;
+    }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        height: 30vh;
+        //margin-bottom: 0;
     }
 `;
 
@@ -66,6 +81,16 @@ const VideoListBlock = styled.div`
         display: flex;
         width: 100%;
         height: fit-content;
+
+        &::-webkit-scrollbar, &::-webkit-scrollbar-thumb {
+            display: none;
+        }
+    }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        margin-right: 0;
+        //display: none;
     }
 `;
 
@@ -98,6 +123,12 @@ const Wrapper = styled(AlignCenter)`
         display: block;
         margin-top: 1.25rem;
     }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 `;
 
 const StyledSVG = styled(SVG)`
@@ -111,6 +142,11 @@ const ContentWrap = styled.article`
     /**********************TABLET RESOLUTIONS*******************/
     @media ( max-width: 1024px ) {
         margin-bottom: 3.125rem;
+    }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        margin-bottom: 6.157vh;
     }
 `;
 

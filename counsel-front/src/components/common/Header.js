@@ -196,15 +196,15 @@ const Header = (props) => {
         <>
             <HeaderBlock>
                 <Wrapper>
-                    <Link to="/" className="logo">
+                    <Link to="/mainpage" className="logo">
                         <Logo></Logo>
                     </Link>
                     <MenuBlock>
                         <ul>
                             <MenuItem listItem={Dropdown_01}>센터 안내</MenuItem>
                             <MenuItem listItem={Dropdown_02}>게시판</MenuItem>
-                            <MenuItem>자가진단</MenuItem>
                             <MenuItem listItem={Dropdown_04}>상담 안내</MenuItem>
+                            <MenuItem>자가진단</MenuItem>
                             <MenuItem>상담 신청</MenuItem>
                         </ul>
                     </MenuBlock>

@@ -19,6 +19,11 @@ const MapBlock = styled(Responsive)`
         
         margin-bottom: 6.25rem;
     }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        margin-bottom: 30vh;
+    }
 `
 
 const MapDummy = styled.div`
@@ -49,6 +54,12 @@ const InfoBlock = styled.div`
         box-sizing: border-box;
         height: 8.75rem;
     }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        position: relative;
+        padding: 0 4%;
+    }
 `;
 
 const TextBlock = styled.div`
@@ -69,12 +80,29 @@ const TextBlock = styled.div`
         padding-top: 2.313rem;
         font-size: 0.833em;
     }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        font-size: 0.6em;
+        margin-bottom: 3vh;
+        position: absolute;
+        bottom: 0;
+    }
 `;
 
 const TextRight = styled.div`
     position: static;
     padding-top: 5.5rem;
     color: white;
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        font-size: 0.65em;
+        margin-bottom: 3vh;
+        position: absolute;
+        bottom: 0;
+        right: 4vw;
+    }
 `;
 
 const Map = () => {

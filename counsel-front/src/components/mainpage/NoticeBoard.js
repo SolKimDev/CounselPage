@@ -22,6 +22,11 @@ const BoardBlock = styled(Responsive)`
             margin-right: 0;
         }
     }
+    
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        margin-bottom: 8vh;
+    }
 `;
 
 const NoticeBoard = () => {

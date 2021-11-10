@@ -35,6 +35,15 @@ const TitleBlock = styled.div`
             float:none;
         }
     }
+    
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        margin-bottom: 1.231vh;
+
+        & h1 {
+            font-weight: 500;
+        }
+    }
 `;
 
 const ImageBlock = styled(AlignCenter)`
@@ -43,6 +52,12 @@ const ImageBlock = styled(AlignCenter)`
     /**********************TABLET RESOLUTIONS*******************/
     @media ( max-width: 1024px ) {
         margin-bottom: 1.25rem;
+    }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        margin-bottom: 1.231vh;
+        height: 80vw;
     }
 `;
 
@@ -57,6 +72,13 @@ const TextBlock = styled(AlignCenter)`
         font-size: 0.833em;
         margin-bottom: 2.125rem;
     }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        font-size: 1em;
+        padding: 0 1%;
+        margin-bottom: 3.078vh;
+    }
 `;
 
 const ButtonBlock = styled(AlignCenter)``;
@@ -69,6 +91,11 @@ const TempImg = styled.div`
     /**********************TABLET RESOLUTIONS*******************/
     @media ( max-width: 1024px ) {
         height: 13.563rem;
+    }
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        height: 80vw;
     }
 `;
 

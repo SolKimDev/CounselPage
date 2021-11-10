@@ -23,6 +23,12 @@ const IconBlock = styled.div`
         css`
             background-color: ${palette.Notice[2]};
         `}
+
+    /**********************MOBILE RESOLUTIONS*******************/
+    @media ( max-width: 640px ) {
+        width: 12.266vw;
+        height: 2.832vh;
+    }
 `;
 
 /*
