@@ -174,13 +174,14 @@ const Header = (props) => {
                 closeSideMenu();
                 history.pushState(null, '', location.href);
             } else {
-                if(domains.some(checkDomain)) {
-                    console.log(true);
-                    history.go(-2);
-                } else {
-                    console.log(document.referrer);
-                    history.go(-1);
-                }
+                // if(domains.some(checkDomain)) {
+                //     console.log(true);
+                //     history.go(-2);
+                // } else {
+                //     console.log(document.referrer);
+                //     history.go(-1);
+                // }
+                history.go(-1);
             }
         };
         
@@ -204,7 +205,7 @@ const Header = (props) => {
                             <MenuItem listItem={Dropdown_01}>센터 안내</MenuItem>
                             <MenuItem listItem={Dropdown_02}>게시판</MenuItem>
                             <MenuItem listItem={Dropdown_04}>상담 안내</MenuItem>
-                            <MenuItem>자가진단</MenuItem>
+                            <MenuItem to="/mainpage/diagnose">자가진단</MenuItem>
                             <MenuItem>상담 신청</MenuItem>
                         </ul>
                     </MenuBlock>

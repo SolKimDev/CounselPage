@@ -7,10 +7,14 @@ import RollingBanner from '../../components/mainpage/RollingBanner';
 import Videos from '../../components/mainpage/Videos';
 import Map from '../../components/mainpage/Map';
 import Sidebar from '../../components/mainpage/Sidebar';
+import { Helmet } from 'react-helmet-async';
 
 const MainPage = () => {
     return (
         <main>
+            <Helmet>
+                <title>상호명 심리상담센터 - 메인페이지</title>
+            </Helmet>
             <Sidebar />
             <RollingBanner />
             <LineBanner />

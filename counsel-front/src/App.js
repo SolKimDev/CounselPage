@@ -8,7 +8,7 @@ const App = () => {
   return (
     <Switch>
       <Route component={RedirectToMain} path="/" exact/>
-      <Route component={ContentRouter} path="/mainpage" exact/>
+      <Route component={ContentRouter} path="/mainpage"/>
 
       <Route component={PrivacyPolicy} path="/popups/policy" exact />
       <Route render={({location}) => (

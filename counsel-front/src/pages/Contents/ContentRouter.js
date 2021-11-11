@@ -4,6 +4,7 @@ import IEWarning from '../../components/common/IEWarning';
 import Header from '../../components/common/Header';
 import Footer from '../../components/common/Footer';
 import MainPage from './MainPage';
+import Diagnose from './Diagnose';
 
 const ContentRouter = () => {
     const [isIE, setIsIE] = useState(false);
@@ -28,6 +29,7 @@ const ContentRouter = () => {
             <Header />
             <Switch>
                 <Route component={MainPage} path="/mainpage" exact />
+                <Route component={Diagnose} path="/mainpage/diagnose"/>
             </Switch>
             <Footer />
         </>

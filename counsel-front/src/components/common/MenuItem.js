@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 
@@ -10,14 +11,19 @@ const NavMenuBlock = styled.li`
     cursor: pointer;
     height: 3.425rem; //Header Height - margin-top
 
-    &:hover > span{
-        color: ${palette.Font[0]};
-        font-weight: bold;
+    a {
+        text-decoration: none;
+        color: ${palette.Font[1]};
+
+        &:hover {
+            color: ${palette.Font[0]};
+            font-weight: bold;
+        }
     }
 
     /**********************OVER TABLET RESOLUTIONS*******************/
     @media ( min-width: 1024px ) {
-        &:hover > ul * {
+        &:hover > a > ul * {
             visibility: visible;
             height: 3.75rem;
             color: white;
@@ -73,20 +79,23 @@ const TextWrapper = styled.div`
 
 
 const MenuItem = (props) => {
-    const { children, listItem } = props;
+    const { children, listItem, to, match } = props;
     return (
-        <NavMenuBlock>
-            {/* 기능 구현할 때 children Link to 로 감싸세요. */}
-            <span>{children}</span>
-            <SubWrapper>
-                { listItem ? (
-                    listItem.map(item => (
-                        <DropdownMenu key={item.to}><TextWrapper>{item.text}</TextWrapper></DropdownMenu>
-                    ))
-                ) : '' }
-            </SubWrapper>
+        <NavMenuBlock> 
+            {/* 구현되고 난 뒤에는 모두 to가 있을 것이므로 이후 코드 수정할 것 */}
+            <Link to={to ? to : match.path}>
+                {/* 기능 구현할 때 children Link to 로 감싸세요. */}
+                <span>{children}</span>
+                <SubWrapper>
+                    { listItem ? (
+                        listItem.map(item => (
+                            <DropdownMenu key={item.to}><TextWrapper>{item.text}</TextWrapper></DropdownMenu>
+                        ))
+                    ) : '' }
+                </SubWrapper>
+            </Link>
         </NavMenuBlock>
     );
 };
 
-export default MenuItem;
+export default withRouter(MenuItem);
