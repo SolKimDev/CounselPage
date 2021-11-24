@@ -7,7 +7,7 @@ import palette from '../../lib/styles/palette';
 import MenuItem from './MenuItem';
 import MenuBtn from '../../rsrc/icons/NavIcon/MenuBtn.svg';
 import SideMenu from './SideMenu';
-import { Dropdown_01, Dropdown_02, Dropdown_04 } from '../../lib/ListedItems';
+import { Dropdown_01, Dropdown_02, Dropdown_03 } from '../../lib/ListedItems';
 
 const HeaderBlock = styled.header`
     position: fixed;
@@ -204,7 +204,7 @@ const Header = (props) => {
                         <ul>
                             <MenuItem listItem={Dropdown_01}>센터 안내</MenuItem>
                             <MenuItem listItem={Dropdown_02}>게시판</MenuItem>
-                            <MenuItem listItem={Dropdown_04}>상담 안내</MenuItem>
+                            <MenuItem listItem={Dropdown_03}>상담 안내</MenuItem>
                             <MenuItem to="/mainpage/diagnose">자가진단</MenuItem>
                             <MenuItem>상담 신청</MenuItem>
                         </ul>

@@ -19,7 +19,8 @@ const palette = {
     Brand_Main: [
         '#6524FF',
         '#D897FF',
-        '#A444A4'
+        '#A444A4',
+        '#C36DC3'
     ],
     Brand_Sub : [
         '#3A7BD8',
