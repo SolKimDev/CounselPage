@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 import Responsive from '../common/Responsive';
 import CheckboxDialogue from './CheckboxDialogue';
+import { Data_Depression } from '../../lib/ListedItems';
+import { getType } from './Results';
 
 const TitleBlock = styled.div`
     h2 {
@@ -19,22 +21,17 @@ const TitleBlock = styled.div`
     margin-bottom: 3.125rem;
 `;
 
-const TableTitle = ['문항 내용','1일 이하','1~2일','3~4일','5~7일'];
-const TableItem = [
-    {text:'평소에는 아무렇지도 않던 일들이 귀찮게 느껴졌다.'},
-    {text:'먹고 싶지 않았다. 입맛이 없었다.'},
-    {text:'가족이나 친구가 도와주더라도 울적한 기분을 떨쳐 버릴 수 없었다.'},
-    {text:'다른 사람들만큼 능력이 있다고 느꼈다.', reverse:true},
-]
+const Depression = ({match}) => {
+    const title = Data_Depression[0];
+    const items = Data_Depression[1];
 
-const Depression = () => {
     return (
         <Responsive>
             <TitleBlock>
             <h2>우울검사 ( CES-D )</h2>
-            <small>아래에 적혀 있는 문항을 잘 읽은 후, 오늘을 포함하여 <span class='boldtext'>지난 일주일 동안</span> 느끼고 행동한 것을 가장 잘 나타내는 항목을 선택해 주십시오.</small>
+            <small>아래에 적혀 있는 문항을 잘 읽은 후, 오늘을 포함하여 <span className='boldtext'>지난 일주일 동안</span> 느끼고 행동한 것을 가장 잘 나타내는 항목을 선택해 주십시오.</small>
         </TitleBlock>
-            <CheckboxDialogue title={TableTitle} items={TableItem} />
+            <CheckboxDialogue title={title} items={items} url={getType(match.url)}/>
         </Responsive>
     );
 };

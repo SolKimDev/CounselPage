@@ -205,7 +205,7 @@ const Header = (props) => {
                             <MenuItem listItem={Dropdown_01}>센터 안내</MenuItem>
                             <MenuItem listItem={Dropdown_02}>게시판</MenuItem>
                             <MenuItem listItem={Dropdown_03}>상담 안내</MenuItem>
-                            <MenuItem to="/mainpage/diagnose">자가진단</MenuItem>
+                            <MenuItem to="/mainpage/diagnose/depression">자가진단</MenuItem>
                             <MenuItem>상담 신청</MenuItem>
                         </ul>
                     </MenuBlock>

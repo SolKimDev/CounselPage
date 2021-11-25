@@ -98,7 +98,7 @@ const StyledTitle = styled.h2`
 const ModalResult = ({ visible, result, onClose }) => {
     const [source, setSource] = useState('');
     const [titleColor, setTitleColor] = useState('');
-    const { type, score, title, text } = result;
+    const { type, title, text } = result;
 
     useEffect(() => {
         selectSource(type);
@@ -143,7 +143,6 @@ const ModalResult = ({ visible, result, onClose }) => {
                     <StyledTitle color={titleColor}>{title}</StyledTitle>
                     <div>
                         <ul>
-                            <li>나의 알코올 사용지수는 {score}점 입니다.</li>
                             {text.map((item, index) => (
                                 <li key={index}>{item}</li>
                             ))}

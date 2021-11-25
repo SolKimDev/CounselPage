@@ -123,7 +123,7 @@ const ButtonArea = styled.div`
 
 const Alcohol = () => {
     const [isFilled, setIsFilled] = useState(false);
-    const [isModalVisable, setIsModalVisable] = useState(false);
+    const [isModalVisible, setIsModalVisible] = useState(false);
     const [isGenderChecked, setIsGenderChecked] = useState(false);
     const [genderSelected, setGenderSelected] = useState('');
     const [result, setResult] = useState({});
@@ -197,7 +197,8 @@ const Alcohol = () => {
                     type,
                     score : total,
                     title : '정상음주군',
-                    text : ['비교적 건강하고 안전한 음주습관을 지니고 있습니다.',
+                    text : [`나의 알코올 사용지수는 ${total}점 입니다.`,
+                            '비교적 건강하고 안전한 음주습관을 지니고 있습니다.',
                             '적정 음주량을 유지하고 건강한 음주지침을 지켜주세요.']
                 }
             case 1:
@@ -205,7 +206,8 @@ const Alcohol = () => {
                     type,
                     score : total,
                     title : '위험음주군',
-                    text : ['음주량과 음주횟수가 너무 많은 편입니다.',
+                    text : [`나의 알코올 사용지수는 ${total}점 입니다.`,
+                            '음주량과 음주횟수가 너무 많은 편입니다.',
                             '현재 술 때문에 큰 문제가 없지만, 음주문제의 예방을 위해 주기적으로 음주행동을 점검할 것을 권장합니다.',
                             '전문요원에게 상담을 받을 것을 권장합니다.']
                 }
@@ -214,7 +216,8 @@ const Alcohol = () => {
                     type,
                     score : total,
                     title : '알코올 사용장애 추정군',
-                    text : ['음주량과 음주횟수의 조절이 어려운 상태입니다.',
+                    text : [`나의 알코올 사용지수는 ${total}점 입니다.`,
+                            '음주량과 음주횟수의 조절이 어려운 상태입니다.',
                             '술을 마셔야 기분이 좋고, 일이 잘되거나 관계가 좋아진다고 생각합니다.',
                             '술을 줄이는 단계가 아니라 절주가 필요합니다.',
                             '전문 병의원 및 알코올 상담센터 등에서의 전문적인 진단과 치료가 필요합니다.']
@@ -225,18 +228,18 @@ const Alcohol = () => {
     const showResult = (e) => {
         e.preventDefault();
         setResult(calcResult);
-        setIsModalVisable(true);
+        setIsModalVisible(true);
     }
 
     const closeModal = () => {
         console.log('cm() called!');
-        setIsModalVisable(false);
+        setIsModalVisible(false);
     }
 
 
     return (
         <>
-            <ModalResult visible={isModalVisable? 1 : 0} result={result} onClose={closeModal}/>
+            <ModalResult visible={isModalVisible? 1 : 0} result={result} onClose={closeModal}/>
             <Responsive>
                 <TitleBlock>
                 <h2>알코올 사용 장애 선별 검사( AUDIT-K )</h2>

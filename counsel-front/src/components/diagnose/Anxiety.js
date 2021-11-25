@@ -32,7 +32,7 @@ const Anxiety = () => {
         <Responsive>
             <TitleBlock>
             <h2>불안검사</h2>
-            <small>아래에 적혀 있는 문항을 잘 읽은 후, 오늘을 포함하여 <span class='boldtext'>지난 한 달 동안</span> 느끼고 행동한 것을 가장 잘 나타내는 항목을 선택해 주십시오.</small>
+            <small>아래에 적혀 있는 문항을 잘 읽은 후, 오늘을 포함하여 <span className='boldtext'>지난 한 달 동안</span> 느끼고 행동한 것을 가장 잘 나타내는 항목을 선택해 주십시오.</small>
         </TitleBlock>
             <CheckboxDialogue title={TableTitle} items={TableItem} />
         </Responsive>
