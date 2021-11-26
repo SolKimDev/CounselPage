@@ -14,6 +14,11 @@ const FormBlock = styled.form`
             border-left: 1px solid ${palette.Line[1]};
         }
     }
+
+    table > thead > tr > th {
+        word-break: keep-all;
+    }
+
     table > thead, tbody {
         & > tr {
             & > td:first-child, th:first-child {
@@ -155,8 +160,6 @@ const CheckboxDialogue = ({ title, items, url }) => {
                         ))}
                     </tbody>
                 </table>
-                <p onClick={showResult}>showModal</p>
-                <p>url = {url}</p>
                 <ButtonArea>
                     {isFilled ? (<LineButton brand>결과 확인</LineButton>) : (<LineButton disabled>결과 확인</LineButton>)}
                 </ButtonArea>

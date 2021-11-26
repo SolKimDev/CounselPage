@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link, Route, useParams } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import Responsive from '../../components/common/Responsive';
 import Alcohol from '../../components/diagnose/Alcohol';

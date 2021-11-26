@@ -243,9 +243,9 @@ export const Data_Depression = [
     ]
 ]
 
-export const Data_Anxiety = {
-    title:  ['나는 지난 1달동안...','전혀 아니다','조금 느꼈다','상당히 느꼈다','심하게 느꼈다'],
-    items: [
+export const Data_Anxiety = [
+    ['나는 지난 1달동안...','전혀 아니다','조금 느꼈다','상당히 느꼈다','심하게 느꼈다'],
+    [
         {text:'매사 불안하다.'},
         {text:'심장이 두근거린다.'},
         {text:'긴장한다.'},
@@ -273,4 +273,4 @@ export const Data_Anxiety = {
 
         {text:'공포감이나 두려움을 느낀다.'},
     ]
-}
+]
