@@ -11,6 +11,7 @@ const Header = ({ setIsLoggedIn }) => {
   const onLogout = () => {
     setIsLoggedIn(false);
   };
+  
   return (
     <HeaderBlock>
       <LogoTemp />
@@ -30,7 +31,7 @@ const HeaderBlock = styled.header`
 
   background-color: white;
   width: 100%;
-  height: ${rem(80 - 2)}; // 80 - border
+  height: ${rem(80)};
   border-bottom: 2px solid ${palette.Line[0]};
   padding: 0 ${rem(24)};
   box-sizing: border-box;
