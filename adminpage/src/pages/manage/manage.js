@@ -1,6 +1,6 @@
 import React from 'react';
 
-const manage = () => {
+const Manage = () => {
     return (
         <div>
             manage
@@ -8,4 +8,4 @@ const manage = () => {
     );
 };
 
-export default manage;
+export default Manage;
