@@ -1,7 +1,7 @@
 import React from "react";
 
 import styled from "styled-components";
-import palette from "../../lib/styles/palette";
+import { palette, fonts } from "../../lib/styles";
 import { rem } from "polished";
 
 const Inputbox = ({ isPassword, isEmpty, value, setValue }) => {
@@ -27,7 +27,7 @@ export default Inputbox;
 const Label = styled.label`
   display: flex;
   font-size: ${rem(32)};
-  font-weight: 500;
+  font-weight: ${fonts.Medium};
   align-items: flex-end;
   justify-content: space-between;
 

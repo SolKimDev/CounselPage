@@ -1,5 +1,5 @@
 
-const palette = {
+export const palette = {
     // 배열 순서 Heavy - Medium - Light
     Font: [
         '#191919',
@@ -35,5 +35,3 @@ const palette = {
         '#999999'
     ]
 }
-
-export default palette;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 
 import styled from "styled-components";
-import palette from "../../lib/styles/palette";
+import { palette, fonts } from "../../lib/styles";
 import { rem } from "polished";
 
 import Inputbox from "../../components/login/Inputbox";
@@ -89,7 +89,7 @@ const TitleBlock = styled.div`
   display: flex;
   align-items: flex-end;
   font-size: ${rem(36)};
-  font-weight: 500;
+  font-weight: ${fonts.Medium};
   color: ${palette.Font[0]};
   margin-bottom: ${rem(104)};
 `;
@@ -123,7 +123,7 @@ const LoginButton = styled.button`
 
   color: white;
   font-size: ${rem(20)};
-  font-weight: 400;
+  font-weight: ${fonts.Regular};
 
   cursor: pointer;
 
