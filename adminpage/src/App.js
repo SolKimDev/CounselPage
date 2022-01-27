@@ -7,6 +7,7 @@ import Managingpage from "./pages/manage/Manage";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // false로 하고 useEffect에서 체크하기.
+  /* TODO : 세션 유지되는 동안 로그인 유지될 수 있도록 하기 */
   return (
     <HelmetProvider>
       <Router>
