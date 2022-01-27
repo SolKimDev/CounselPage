@@ -12,9 +12,15 @@ function App() {
     <HelmetProvider>
       <Router>
         {isLoggedIn ? (
-          <Route path="/" component={Managingpage} />
+          <Route
+            path="/"
+            render={() => <Managingpage setIsLoggedIn={setIsLoggedIn} />}
+          />
         ) : (
-          <Route path="/" render={() => <Loginpage setIsLoggedIn={setIsLoggedIn} />} />
+          <Route
+            path="/"
+            render={() => <Loginpage setIsLoggedIn={setIsLoggedIn} />}
+          />
         )}
       </Router>
     </HelmetProvider>
