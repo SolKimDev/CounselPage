@@ -5,13 +5,13 @@ import { rem } from "polished";
 import { palette } from "../../lib/styles";
 import NavItem from "./NavItem";
 
-const SideMenu = ({ MenuMap, setCurrentPage, currentPage }) => {
+const SideMenu = ({ MenuMap, setCurrentPage, currentPage, IconMap }) => {
   const MenuArray = Object.entries(MenuMap);
   return (
     <SideBlock>
       <NavBlock>
         {MenuArray.map((Item) => (
-          <NavItem key={Item[0]} setCurrentPage={setCurrentPage} keyOfMap={Item[0]} currentPage={currentPage}>
+          <NavItem key={Item[0]} setCurrentPage={setCurrentPage} keyOfMap={Item[0]} currentPage={currentPage} IconSrc={IconMap[Item[0]]}>
             {Item[1]}
           </NavItem>
         ))}

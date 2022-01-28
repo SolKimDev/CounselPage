@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from "react";
 import styled, { css } from "styled-components";
 
+import SVG from "react-inlinesvg";
+
 import { rem } from "polished";
 import { palette, fonts } from "../../lib/styles";
 
-const NavItem = ({ children, setCurrentPage, keyOfMap, currentPage }) => {
+const NavItem = ({
+  children,
+  setCurrentPage,
+  keyOfMap,
+  currentPage,
+  IconSrc,
+}) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const onClick = () => {
@@ -17,10 +25,7 @@ const NavItem = ({ children, setCurrentPage, keyOfMap, currentPage }) => {
 
   return (
     <ItemBlock onClick={onClick} isSelected={isSelected}>
-      <IconTemp>
-        {/* TODO : 아이콘 표시를 위한 임시값입니다. 이후 각 아이콘을 할당해야 합니다. */}
-        {keyOfMap.charAt(0)}
-      </IconTemp>
+      <SideMenuIcon src={IconSrc} />
       {children}
     </ItemBlock>
   );
@@ -51,6 +56,10 @@ const ItemBlock = styled.button`
 
   &:hover {
     font-weight: ${fonts.Bold};
+
+    & > svg {
+      fill: ${palette.Font[0]};
+    }
   }
 
   ${(props) =>
@@ -59,14 +68,24 @@ const ItemBlock = styled.button`
       font-weight: ${fonts.Bold};
       color: ${palette.Brand_Main[2]};
       border-bottom: 3px solid ${palette.Brand_Main[2]};
+
+      & > svg {
+        fill: ${palette.Brand_Main[2]};
+      }
+
+      &:hover {
+        & > svg {
+          fill: ${palette.Brand_Main[2]};
+        }
+      }
     `}
 `;
 
-const IconTemp = styled.div`
+const SideMenuIcon = styled(SVG)`
   width: ${rem(32)};
   height: ${rem(32)};
-  background-color: ${palette.Font[1]};
 
-  font-size: ${rem(20)};
   margin-right: ${rem(12)};
+
+  fill: ${palette.Font[1]};
 `;

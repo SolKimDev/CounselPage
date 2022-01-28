@@ -2,6 +2,8 @@ import { rem } from "polished";
 import React from "react";
 import styled from "styled-components";
 
+import SVG from "react-inlinesvg";
+
 import { palette, fonts } from "../../lib/styles";
 import {
   Dashboard,
@@ -19,16 +21,13 @@ const pageMap = {
   Security,
 };
 
-const ManageTemplate = ({ MenuMap, currentPage }) => {
+const ManageTemplate = ({ MenuMap, currentPage, IconMap }) => {
   const title = MenuMap[currentPage];
   const PageObject = pageMap[currentPage];
   return (
     <ContentWrap>
       <TitleBlock>
-        <IconTemp>
-          {/* TODO : 아이콘 표시를 위한 임시값입니다. 이후 각 아이콘을 할당해야 합니다. */}
-          {title.charAt(0)}
-        </IconTemp>
+        <CurrentMenuIcon src={IconMap[currentPage]} />
         {title}
       </TitleBlock>
       <ContentBlock>
@@ -54,13 +53,13 @@ const TitleBlock = styled.h1`
   font-weight: ${fonts.Bold};
 `;
 
-const IconTemp = styled.div`
+const CurrentMenuIcon = styled(SVG)`
   width: ${rem(40)};
   height: ${rem(40)};
 
-  font-size: ${rem(20)};
-  background-color: ${palette.Font[1]};
   margin-right: ${rem(8)};
+
+  fill: ${palette.Font[0]};
 `;
 
 const ContentBlock = styled.section`

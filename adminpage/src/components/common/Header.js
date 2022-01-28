@@ -5,7 +5,7 @@ import { rem } from "polished";
 import { fonts, palette } from "../../lib/styles";
 
 import SVG from "react-inlinesvg";
-import logoutIcon from "../../rsrc/icons/logout.svg";
+import logoutIcon from "../../rsrc/icons/Logout.svg";
 
 const Header = ({ setIsLoggedIn }) => {
   const onLogout = () => {
