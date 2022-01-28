@@ -6,7 +6,7 @@ import { palette, fonts } from "../../lib/styles";
 import { rem } from "polished";
 
 import Inputbox from "../../components/login/Inputbox";
-import { login } from "../../lib/api/auth";
+import { login, tempData } from "../../lib/api/auth";
 
 const Login = ({ setIsLoggedIn }) => {
   const [isIDEmpty, setIsIDEmpty] = useState(false);
@@ -15,11 +15,28 @@ const Login = ({ setIsLoggedIn }) => {
   const [valueID, setValueID] = useState("");
   const [valuePW, setValuePW] = useState("");
 
+  const onLogin = () => {
+    setIsLoggedIn(true);
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
     valueID === "" ? setIsIDEmpty(true) : setIsIDEmpty(false);
     valuePW === "" ? setIsPWEmpty(true) : setIsPWEmpty(false);
-    login(valueID, valuePW) ? setIsLoggedIn(true) : setIsFailed(true);
+
+    // TODO : 나중에 백엔드 만든 후 비동기로 제대로 적용하기
+    login(valueID, valuePW, tempData.IP).status === 500
+      ? onLogin()
+      : setIsFailed(true);
+
+    try {
+      localStorage.setItem(
+        "user",
+        `{"token":"${tempData.token}","IP":"${tempData.IP}"}`
+      );
+    } catch (e) {
+      console.log("localStorage is not working");
+    }
   };
 
   return (

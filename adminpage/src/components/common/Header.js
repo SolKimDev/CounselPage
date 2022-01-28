@@ -6,12 +6,19 @@ import { fonts, palette } from "../../lib/styles";
 
 import SVG from "react-inlinesvg";
 import logoutIcon from "../../rsrc/icons/Logout.svg";
+import { logout } from "../../lib/api/auth";
 
 const Header = ({ setIsLoggedIn }) => {
   const onLogout = () => {
-    setIsLoggedIn(false);
+    logout();
+    try {
+      localStorage.removeItem("user");
+      setIsLoggedIn(false);
+    } catch (e) {
+      console.log("localStorage is not working");
+    }
   };
-  
+
   return (
     <HeaderBlock>
       <LogoTemp />
